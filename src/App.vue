@@ -1,5 +1,6 @@
 <template>
   <h1>Todo Aplication</h1>
+  <AddTodo />
   <hr />
   <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
   <!-- v-bind в качестве пропс нужен для передачи данных todos каторый написан в ковычках это и есть массив todos -->
@@ -8,6 +9,7 @@
 
 <script>
 import TodoList from "@/components/TodoList";
+import AddTodo from "@/components/AddTodo";
 export default {
   name: "App",
   data() {
@@ -21,6 +23,7 @@ export default {
   },
   components: {
     TodoList,
+    AddTodo,
   },
   methods: {
     removeTodo(id) {
