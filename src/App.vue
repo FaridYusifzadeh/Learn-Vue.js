@@ -1,7 +1,7 @@
 <template>
   <h1>Todo Aplication</h1>
   <hr />
-  <TodoList v-bind:todos='todos'/> 
+  <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
   <!-- v-bind в качестве пропс нужен для передачи данных todos каторый написан в ковычках это и есть массив todos -->
   <!-- а для того чтиобы взять эти данные в todolist нужно запомнить todos после двоеточых -->
 </template>
@@ -21,6 +21,11 @@ export default {
   },
   components: {
     TodoList,
+  },
+  methods: {
+    removeTodo(id) {
+      this.todos = this.todos.filter((t) => t.id !== id);
+    },
   },
 };
 </script>
