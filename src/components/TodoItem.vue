@@ -1,5 +1,12 @@
 <template>
-  <li>  {{todo.title}}</li>
+  <li> 
+      <span>
+          <input type="checkbox">
+          <strong>{{todo.id}}</strong>
+          {{todo.title}}
+      </span>
+      <button>&times;</button>
+  </li>
 </template>
 
 <script>
@@ -12,3 +19,13 @@ export default {
   }  
 }
 </script>
+
+<style scoped>
+li{
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    margin-bottom: 1rem;
+}
+</style>

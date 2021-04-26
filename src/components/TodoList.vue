@@ -19,3 +19,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ul{
+    margin: 0;
+    padding: 0;
+}
+</style>
