@@ -1,6 +1,6 @@
 <template>
   <h1>Todo Aplication</h1>
-  <AddTodo />
+  <AddTodo @add-todo="addTodd" />
   <hr />
   <TodoList v-bind:todos="todos" @remove-todo="removeTodo" />
   <!-- v-bind в качестве пропс нужен для передачи данных todos каторый написан в ковычках это и есть массив todos -->
@@ -25,9 +25,19 @@ export default {
     TodoList,
     AddTodo,
   },
+  mounted() {
+    fetch("https://jsonplaceholder.typicode.com/todos?_limit=3")
+      .then((response) => response.json())
+      .then((json) => {
+        this.todos = json;
+      });
+  },git 
   methods: {
     removeTodo(id) {
       this.todos = this.todos.filter((t) => t.id !== id);
+    },
+    addTodd(todo) {
+      this.todos.push(todo);
     },
   },
 };
