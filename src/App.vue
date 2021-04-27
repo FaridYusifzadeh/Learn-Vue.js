@@ -31,7 +31,7 @@ export default {
       .then((json) => {
         this.todos = json;
       });
-  },git 
+  },
   methods: {
     removeTodo(id) {
       this.todos = this.todos.filter((t) => t.id !== id);
